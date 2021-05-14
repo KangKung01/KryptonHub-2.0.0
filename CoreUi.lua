@@ -7,8 +7,26 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local CloseBind = Enum.KeyCode.RightControl
 
+do 
+	local Chars = {
+		{48, 57},
+		{65, 90},
+		{97, 122},
+	}
+	
+	function KangRandom(Length)
+		local Random;
+		if Length and type(Length) == "number" then
+			for i = 1, Length do
+				local Select = Chars[math.random(1,#Chars)]
+				Random = Random..string.char(math.random(Select[1], Select[2]))
+			end
+		end
+		return tostring(Random)
+	end
+end
 local FluxLib = Instance.new("ScreenGui")
-FluxLib.Name = math.random(0,99999).."A!"..math.random(0,99999)
+FluxLib.Name = KangRandom(24)
 FluxLib.Parent = game.CoreGui
 FluxLib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -87,8 +105,8 @@ end
 
 
 
-function Flux:Window(toclose)
-	CloseBind = toclose or Enum.KeyCode.RightControl
+function Flux:Window()
+	CloseBind = Enum.KeyCode.RightControl
 	PresetColor = Color3.fromRGB(54, 8, 141)
 	local fs = false
 	local MainFrame = Instance.new("Frame")
@@ -144,7 +162,7 @@ function Flux:Window(toclose)
 	Title.Position = UDim2.new(0.097560972, 0, 0.0475206636, 0)
 	Title.Size = UDim2.new(0, 111, 0, 34)
 	Title.Font = Enum.Font.GothamBold
-	Title.Text = "KryptonHub 2.0.0"
+	Title.Text = "KryptonHub 2"
 	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Title.TextSize = 22.000
 	Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -156,7 +174,7 @@ function Flux:Window(toclose)
 	BottomText.Position = UDim2.new(0.097560972, 0, 0.0889999792, 0)
 	BottomText.Size = UDim2.new(0, 113, 0, 28)
 	BottomText.Font = Enum.Font.Gotham
-	BottomText.Text = "Discord : https://discord.gg/dT548YPAYX"
+	BottomText.Text = "https://discord.gg/dT548YPAYX"
 	BottomText.TextColor3 = Color3.fromRGB(255, 255, 255)
 	BottomText.TextSize = 12.000
 	BottomText.TextTransparency = 0.300
