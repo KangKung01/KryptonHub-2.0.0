@@ -15,7 +15,7 @@ do
 	}
 	
 	function KangRandom(Length)
-		local Random;
+		local Random = "";
 		if Length and type(Length) == "number" then
 			for i = 1, Length do
 				local Select = Chars[math.random(1,#Chars)]
