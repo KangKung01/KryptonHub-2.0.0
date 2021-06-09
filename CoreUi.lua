@@ -27,7 +27,7 @@ do
 end
 local FluxLib = Instance.new("ScreenGui")
 FluxLib.Name = KangRandom(14)
-FluxLib.Parent = game.Players.LocalPlayer.PlayerGui
+FluxLib.Parent = game.CoreGui
 FluxLib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 coroutine.wrap(
